@@ -88,20 +88,30 @@ export default function Home() {
 
             {/* Typing "Project K" Title */}
             <motion.div
-              className="mb-8"
+              className="mb-8 relative isolate"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.3 }}
             >
-              <h1 className="text-6xl md:text-9xl font-bold tracking-tight">
+              <div
+                className="absolute -top-4 -right-8 w-[180px] h-[180px] pointer-events-none opacity-80"
+                style={{
+                  background: 'radial-gradient(circle, rgba(139,0,0,0.8) 0%, rgba(139,0,0,0.4) 40%, transparent 70%)',
+                  filter: 'blur(20px)',
+                  zIndex: -1,
+                }}
+              />
+              <h1 className="text-6xl md:text-9xl font-bold tracking-tight drop-shadow-sm relative z-10">
                 <span className="text-white">{typedText.slice(0, 8)}</span>
-                <span className="bg-clip-text text-transparent bg-gradient-to-r from-accent-teal via-accent-purple to-accent-cyan">{typedText.slice(8)}</span>
-                <span
-                  className="inline-block w-[4px] h-[0.8em] ml-1 align-baseline border-r-4 border-accent-teal"
-                  style={{ animation: 'blink-caret 0.75s step-end infinite' }}
-                />
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#8B0000] via-[#FF0000] to-[#8B0000] drop-shadow-[0_0_5px_rgba(255,0,0,0.3)]">{typedText.slice(8)}</span>
+                {typedText.length < fullTitle.length && (
+                  <span
+                    className="inline-block w-[4px] h-[0.8em] ml-1 align-baseline border-r-4 border-accent-teal"
+                    style={{ animation: 'blink-caret 0.75s step-end infinite' }}
+                  />
+                )}
               </h1>
-              <p className="text-lg md:text-xl text-text-secondary mt-3 tracking-widest uppercase">
+              <p className="text-lg md:text-xl text-text-secondary mt-3 tracking-widest uppercase font-medium">
                 Hybrid Traffic Intelligence
               </p>
             </motion.div>
@@ -130,7 +140,7 @@ export default function Home() {
 
             {/* Death Counter */}
             <motion.div
-              className="glass-card p-8 mb-12 max-w-md relative overflow-hidden"
+              className="glass-heavy p-8 mb-12 max-w-md relative overflow-hidden"
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.4 }}
@@ -155,7 +165,7 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
             >
-              <div className="glass-card p-6 relative overflow-hidden group hover:shadow-[0_0_40px_rgba(255,171,0,0.2)] hover:border-accent-amber/30 transition-all">
+              <div className="glass-heavy p-6 relative overflow-hidden group hover:border-accent-amber/50 transition-all">
                 <div className="absolute inset-0 bg-gradient-to-br from-accent-amber/10 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity" />
                 <div className="clay-icon w-12 h-12 bg-accent-amber/15 mb-3 relative z-10">
                   <DollarSign className="w-6 h-6 text-accent-amber" />
@@ -163,7 +173,7 @@ export default function Home() {
                 <div className="text-3xl font-bold mb-1 relative z-10">₹3-5 Lakh Cr</div>
                 <div className="text-sm text-text-secondary relative z-10">Economic Loss Annually</div>
               </div>
-              <div className="glass-card p-6 relative overflow-hidden group hover:shadow-[0_0_40px_rgba(0,240,255,0.2)] hover:border-accent-cyan/30 transition-all">
+              <div className="glass-heavy p-6 relative overflow-hidden group hover:border-accent-cyan/50 transition-all">
                 <div className="absolute inset-0 bg-gradient-to-br from-accent-cyan/10 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity" />
                 <div className="clay-icon w-12 h-12 bg-accent-cyan/15 mb-3 relative z-10">
                   <Wifi className="w-6 h-6 text-accent-cyan" />
@@ -171,7 +181,7 @@ export default function Home() {
                 <div className="text-3xl font-bold mb-1 relative z-10">13,00,000+</div>
                 <div className="text-sm text-text-secondary relative z-10">Passive Cameras</div>
               </div>
-              <div className="glass-card p-6 relative overflow-hidden group hover:shadow-[0_0_40px_rgba(213,0,249,0.2)] hover:border-accent-purple/30 transition-all">
+              <div className="glass-heavy p-6 relative overflow-hidden group hover:border-accent-purple/50 transition-all">
                 <div className="absolute inset-0 bg-gradient-to-br from-accent-purple/10 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity" />
                 <div className="clay-icon w-12 h-12 bg-accent-purple/15 mb-3 relative z-10">
                   <Zap className="w-6 h-6 text-accent-purple" />
@@ -235,7 +245,7 @@ export default function Home() {
             >
               {/* Card 1 */}
               <motion.div
-                className="glass-card p-6 group hover:bg-white/5 transition-colors duration-300 hover:shadow-[0_0_40px_rgba(255,23,68,0.3)] hover:border-accent-teal/30 relative overflow-hidden"
+                className="glass-heavy p-6 group hover:bg-white/10 transition-colors duration-300 hover:border-accent-teal/50 relative overflow-hidden"
                 variants={{
                   hidden: { opacity: 0, y: 30 },
                   visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
@@ -258,7 +268,7 @@ export default function Home() {
 
               {/* Card 2 */}
               <motion.div
-                className="glass-card p-6 group hover:bg-white/5 transition-colors duration-300 hover:shadow-[0_0_40px_rgba(0,240,255,0.3)] hover:border-accent-cyan/30 relative overflow-hidden"
+                className="glass-card p-6 group hover:bg-white/10 transition-colors duration-300 hover:border-accent-cyan/50 relative overflow-hidden"
                 variants={{
                   hidden: { opacity: 0, y: 30 },
                   visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
@@ -281,7 +291,7 @@ export default function Home() {
 
               {/* Card 3 */}
               <motion.div
-                className="glass-card p-6 group hover:bg-white/5 transition-colors duration-300 hover:shadow-[0_0_40px_rgba(255,171,0,0.3)] hover:border-accent-amber/30 relative overflow-hidden"
+                className="glass-card p-6 group hover:bg-white/10 transition-colors duration-300 hover:border-accent-amber/50 relative overflow-hidden"
                 variants={{
                   hidden: { opacity: 0, y: 30 },
                   visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
@@ -304,7 +314,7 @@ export default function Home() {
 
               {/* Card 4 */}
               <motion.div
-                className="glass-card p-6 group hover:bg-white/5 transition-colors duration-300 hover:shadow-[0_0_40px_rgba(213,0,249,0.3)] hover:border-accent-purple/30 relative overflow-hidden"
+                className="glass-card p-6 group hover:bg-white/10 transition-colors duration-300 hover:border-accent-purple/50 relative overflow-hidden"
                 variants={{
                   hidden: { opacity: 0, y: 30 },
                   visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
@@ -327,7 +337,7 @@ export default function Home() {
 
               {/* Card 5 */}
               <motion.div
-                className="glass-card p-6 group hover:bg-white/5 transition-colors duration-300 hover:shadow-[0_0_40px_rgba(61,90,254,0.3)] hover:border-accent-blue/30 relative overflow-hidden"
+                className="glass-card p-6 group hover:bg-white/10 transition-colors duration-300 hover:border-accent-blue/50 relative overflow-hidden"
                 variants={{
                   hidden: { opacity: 0, y: 30 },
                   visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
@@ -350,7 +360,7 @@ export default function Home() {
 
               {/* Card 6 */}
               <motion.div
-                className="glass-card p-6 group hover:bg-white/5 transition-colors duration-300 hover:shadow-[0_0_40px_rgba(255,0,64,0.3)] hover:border-accent-rose/30 relative overflow-hidden"
+                className="glass-card p-6 group hover:bg-white/10 transition-colors duration-300 hover:border-accent-rose/50 relative overflow-hidden"
                 variants={{
                   hidden: { opacity: 0, y: 30 },
                   visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
@@ -373,7 +383,7 @@ export default function Home() {
 
               {/* Card 7 */}
               <motion.div
-                className="glass-card p-6 group hover:bg-white/5 transition-colors duration-300 hover:shadow-[0_0_40px_rgba(0,230,118,0.3)] hover:border-accent-green/30 relative overflow-hidden"
+                className="glass-card p-6 group hover:bg-white/10 transition-colors duration-300 hover:border-accent-green/50 relative overflow-hidden"
                 variants={{
                   hidden: { opacity: 0, y: 30 },
                   visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
@@ -396,7 +406,7 @@ export default function Home() {
 
               {/* Card 8 */}
               <motion.div
-                className="glass-card p-6 group hover:bg-white/5 transition-colors duration-300 hover:shadow-[0_0_40px_rgba(255,171,0,0.3)] hover:border-accent-amber/30 relative overflow-hidden"
+                className="glass-card p-6 group hover:bg-white/10 transition-colors duration-300 hover:border-accent-amber/50 relative overflow-hidden"
                 variants={{
                   hidden: { opacity: 0, y: 30 },
                   visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }

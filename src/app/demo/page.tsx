@@ -48,13 +48,13 @@ export default function DemoPage() {
                         transition={{ delay: 0.1 }}
                     >
                         {/* Content Area */}
-                        <div className="p-6 bg-black/20 min-h-[600px]">
+                        <div className="p-6 bg-white/5 min-h-[600px]">
                             <VideoAnalyzer />
                         </div>
                     </motion.div>
 
                     {/* Incident Detection Log */}
-                    <div className="mt-16 bg-black/40 backdrop-blur-md rounded-3xl border border-white/10 p-8 gpu-optimize shadow-2xl">
+                    <div className="mt-16 glass-card p-8 shadow-2xl">
                         <div className="flex items-center gap-4 mb-8">
                             <div className="w-12 h-12 rounded-xl bg-accent-teal/20 flex items-center justify-center">
                                 <Activity className="w-6 h-6 text-accent-teal" />

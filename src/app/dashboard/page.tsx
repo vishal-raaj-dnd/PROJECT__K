@@ -241,10 +241,10 @@ export default function DashboardPage() {
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: idx * 0.1 }}
                                 whileHover={{ scale: 1.02 }}
-                                className={`glass-card p-6 relative overflow-hidden group transition-all duration-300 ${idx === 0 ? "hover:shadow-[0_0_40px_rgba(0,240,255,0.3)] hover:border-accent-cyan/30" :
-                                    idx === 1 ? "hover:shadow-[0_0_40px_rgba(213,0,249,0.3)] hover:border-accent-purple/30" :
-                                        idx === 2 ? "hover:shadow-[0_0_40px_rgba(255,23,68,0.3)] hover:border-accent-teal/30" :
-                                            "hover:shadow-[0_0_40px_rgba(0,230,118,0.3)] hover:border-accent-green/30"
+                                className={`glass-card p-6 relative overflow-hidden group transition-all duration-300 ${idx === 0 ? "hover:border-accent-cyan/50" :
+                                    idx === 1 ? "hover:border-accent-purple/50" :
+                                        idx === 2 ? "hover:border-accent-teal/50" :
+                                            "hover:border-accent-green/50"
                                     }`}
                             >
                                 <div className={`absolute inset-0 bg-gradient-to-br ${stat.color} opacity-0 group-hover:opacity-10 transition-opacity rounded-3xl`} />
@@ -271,7 +271,7 @@ export default function DashboardPage() {
                         initial={{ opacity: 0, scale: 0.95 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ delay: 0.4 }}
-                        className="glass-card p-6 group hover:shadow-[0_0_40px_rgba(213,0,249,0.3)] hover:border-accent-purple/30 transition-all duration-300"
+                        className="glass-card p-6 group hover:border-accent-purple/50 transition-all duration-300"
                     >
                         <h3 className="text-lg font-bold mb-6">Detection Timeline (Last 24h)</h3>
                         <ResponsiveContainer width="100%" height={280}>
@@ -309,7 +309,7 @@ export default function DashboardPage() {
                         initial={{ opacity: 0, scale: 0.95 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ delay: 0.2 }}
-                        className="glass-card p-6 group hover:shadow-[0_0_40px_rgba(255,171,0,0.3)] hover:border-accent-amber/30 transition-all duration-300"
+                        className="glass-card p-6 group hover:border-accent-amber/50 transition-all duration-300"
                     >
                         <h3 className="text-xl font-bold mb-6 flex items-center gap-2">
                             <Target className="w-5 h-5 text-accent-amber" />
@@ -346,7 +346,7 @@ export default function DashboardPage() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.5 }}
-                        className="glass-card p-6 group hover:shadow-[0_0_40px_rgba(61,90,254,0.3)] hover:border-accent-blue/30 transition-all duration-300"
+                        className="glass-card p-6 group hover:border-accent-blue/50 transition-all duration-300"
                     >
                         <h3 className="text-xl font-bold mb-6">AI Model Performance</h3>
                         <div className="space-y-4">
@@ -379,7 +379,7 @@ export default function DashboardPage() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.6 }}
-                        className="glass-card p-6 group hover:shadow-[0_0_40px_rgba(0,230,118,0.3)] hover:border-accent-green/30 transition-all duration-300"
+                        className="glass-card p-6 group hover:border-accent-green/50 transition-all duration-300"
                     >
                         <h3 className="text-xl font-bold mb-6">Emergency Response</h3>
                         <div className="space-y-4">
@@ -410,7 +410,7 @@ export default function DashboardPage() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.7 }}
-                        className="glass-card p-6 group hover:shadow-[0_0_40px_rgba(255,171,0,0.3)] hover:border-accent-amber/30 transition-all duration-300"
+                        className="glass-card p-6 group hover:border-accent-amber/50 transition-all duration-300"
                     >
                         <h3 className="text-xl font-bold mb-6">Infrastructure Defects</h3>
                         <div className="space-y-3">
@@ -442,7 +442,7 @@ export default function DashboardPage() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.8 }}
-                    className="glass-card p-6 group hover:shadow-[0_0_40px_rgba(255,23,68,0.3)] hover:border-accent-teal/30 transition-all duration-300"
+                    className="glass-card p-6 group hover:border-accent-teal/50 transition-all duration-300"
                 >
                     <div className="flex items-center justify-between mb-6">
                         <h3 className="text-xl font-bold">System Activity Log (Real-time)</h3>
